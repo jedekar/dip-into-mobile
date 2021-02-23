@@ -1,14 +1,14 @@
-package ua.kpi.comsys.io8128.ui.home;
+package ua.kpi.comsys.io8128.ui.general;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class GeneralViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public GeneralViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("Ходос Олександр\nГрупа ІО-81\nЗК ІО-8128");
     }
