@@ -31,4 +31,10 @@
             app:destination="@id/navigation_drawing_plot" />
     </fragment>
 
+    <fragment
+        android:id="@+id/navigation_movies"
+        android:name="ua.kpi.comsys.io8128.ui.movies.MoviesFragment"
+        android:label="@string/title_movies"
+        tools:layout="@layout/fragment_movies" />
+
 </navigation>
