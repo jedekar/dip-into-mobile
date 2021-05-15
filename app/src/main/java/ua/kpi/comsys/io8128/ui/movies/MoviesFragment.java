@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.Adapter;
 
@@ -50,6 +51,7 @@ public class MoviesFragment extends Fragment {
         recyclerView = (RecyclerView) root.findViewById(R.id.movies_recycler_view);
         adapter = new MoviesAdapter(parseDataset());
         recyclerView.setAdapter(adapter);
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
 
         return root;
     }
