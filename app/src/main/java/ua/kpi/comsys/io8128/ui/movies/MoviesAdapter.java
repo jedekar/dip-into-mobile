@@ -38,6 +38,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesViewHolder> {
             Drawable image = ContextCompat.getDrawable(context, imageId);
 
             holder.getImageView().setImageDrawable(image);
+        } else {
+            holder.getImageView().setImageDrawable(null);
         }
 
         String text = movie.title
