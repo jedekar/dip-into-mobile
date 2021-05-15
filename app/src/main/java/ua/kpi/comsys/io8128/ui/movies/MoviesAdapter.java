@@ -1,18 +1,21 @@
 package ua.kpi.comsys.io8128.ui.movies;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import ua.kpi.comsys.io8128.R;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesViewHolder> {
 
-    private String[] dataset;
+    private Movie[] dataset;
 
-    public MoviesAdapter(String[] dataset) {
+    public MoviesAdapter(Movie[] dataset) {
         this.dataset = dataset;
     }
 
@@ -25,7 +28,25 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesViewHolder> {
 
     @Override
     public void onBindViewHolder(MoviesViewHolder holder, int position) {
-        holder.getTextView().setText(dataset[position]);
+        Movie movie = dataset[position];
+
+        if (movie.poster != null && !movie.poster.equals("")) {
+            Context context = holder.getImageView().getContext();
+            String imageName = movie.poster.substring(0, movie.poster.indexOf('.'));
+            int imageId = context.getResources().getIdentifier(
+                    imageName, "raw", context.getPackageName());
+            Drawable image = ContextCompat.getDrawable(context, imageId);
+
+            holder.getImageView().setImageDrawable(image);
+        }
+
+        String text = movie.title
+                + "\n\n"
+                + movie.year
+                + "\n\n"
+                + movie.type;
+
+        holder.getTextView().setText(text);
     }
 
     @Override
