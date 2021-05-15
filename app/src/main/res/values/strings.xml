@@ -5,4 +5,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_movies">Movies</string>
+    <string name="movie_image_content_description">Image of movie</string>
+    <string name="movie_text">Movie Description</string>
 </resources>
