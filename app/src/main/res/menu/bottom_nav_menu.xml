@@ -11,4 +11,9 @@
         android:icon="@drawable/ic_drawing"
         android:title="@string/title_drawing" />
 
+    <item
+        android:id="@+id/navigation_movies"
+        android:icon="@drawable/ic_movies"
+        android:title="@string/title_movies" />
+
 </menu>
